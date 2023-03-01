@@ -31,4 +31,10 @@ router.post('/', async function (req, res) {
   res.send({ html });
 });
 
+router.post('/test', async function (req, res) {
+  const { a, b, c } = req.body;
+  const result = a + b + c;
+  res.send({ result });
+});
+
 export default router;
