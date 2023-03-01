@@ -1,7 +1,6 @@
 import express from 'express';
 
 import { templates } from '../templates/index.js';
-import { formCheck } from '../middlewares/formCheck.js';
 
 const router = express.Router();
 
@@ -20,7 +19,7 @@ router.get('/', async function (req, res) {
     const html = template.generate(defaultForm);
     return { title, html };
   });
-  res.send('allTemplates');
+  res.send(allTemplates);
 });
 
 router.post('/', async function (req, res) {
