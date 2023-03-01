@@ -1,6 +1,6 @@
 import express from 'express';
 
-import templateController from './template.js';
+const templateController = require('./template');
 
 const router = express.Router();
 
