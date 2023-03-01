@@ -1,4 +1,4 @@
-const requiredFieldCheck = (key, value) => {
+export const requiredFieldCheck = (key, value) => {
   if (!value) {
     const code = 'REQUIRED_FIELD';
     const field = key;
@@ -8,7 +8,7 @@ const requiredFieldCheck = (key, value) => {
 
   return { isValid: true };
 };
-const emailValidation = (email) => {
+export const emailValidation = (email) => {
   const isValid = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email);
   if (!isValid) {
     const code = 'INVALID_FIELD_FORMAT';
@@ -19,7 +19,7 @@ const emailValidation = (email) => {
   return { isValid };
 };
 
-const phoneNumberValidation = (phoneNumber) => {
+export const phoneNumberValidation = (phoneNumber) => {
   const isValid = /^\+?([0-9]{3})\)?[-. ]?([0-9]{2})[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(phoneNumber);
   if (!isValid) {
     const code = 'INVALID_FIELD_FORMAT';
@@ -30,7 +30,7 @@ const phoneNumberValidation = (phoneNumber) => {
   return { isValid };
 };
 
-const formCheck = () => {
+export const formCheck = () => {
   return async (req, res, next) => {
     const { form } = req.body;
 
@@ -66,5 +66,3 @@ const formCheck = () => {
     return next();
   };
 };
-
-export default formCheck;

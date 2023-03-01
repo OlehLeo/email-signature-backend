@@ -1,7 +1,7 @@
 import express from 'express';
 
 import { templates } from '../templates/index.js';
-import formCheck from '../middlewares/formCheck.js';
+import { formCheck } from '../middlewares/formCheck.js';
 
 const router = express.Router();
 
