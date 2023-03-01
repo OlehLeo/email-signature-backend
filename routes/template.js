@@ -20,7 +20,7 @@ router.get('/', async function (req, res) {
     const html = template.generate(defaultForm);
     return { title, html };
   });
-  res.send(allTemplates);
+  res.send('allTemplates');
 });
 
 router.post('/', async function (req, res) {
@@ -29,16 +29,6 @@ router.post('/', async function (req, res) {
   const template = templates.find((template) => template.title === templateTitle);
   const html = template.generate(form);
   res.send({ html });
-});
-
-router.post('/test', async function (req, res) {
-  const { a, b, c } = req.body;
-  const result = a + b + c;
-  res.send({ result });
-});
-
-router.get('/test', async function (req, res) {
-  res.send('get test');
 });
 
 export default router;
