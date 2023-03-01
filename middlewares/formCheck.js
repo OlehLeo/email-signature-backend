@@ -30,9 +30,7 @@ export const phoneNumberValidation = (phoneNumber) => {
   return { isValid };
 };
 
-export const formCheck = (req, res) => {
-  const { form } = req.body;
-
+export const formCheck = (form) => {
   const errors = [];
   const keys = Object.keys(form);
   keys.forEach((key) => {
@@ -58,8 +56,5 @@ export const formCheck = (req, res) => {
     }
   });
 
-  if (!!errors.length) {
-    console.log(errors);
-    return res.status(400).send({ errors });
-  }
+  return errors;
 };

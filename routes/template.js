@@ -24,9 +24,12 @@ router.get('/', async function (req, res) {
 });
 
 router.post('/', async function (req, res) {
-  formCheck(req, res);
-
   const { form, templateTitle } = req.body;
+  const errors = formCheck(form);
+  if (!!errors.length) {
+    console.log(errors);
+    return res.status(400).send({ errors });
+  }
 
   const template = templates.find((template) => template.title === templateTitle);
   const html = template.generate(form);
