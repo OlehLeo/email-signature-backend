@@ -5,7 +5,7 @@ import { formCheck } from '../middlewares/formCheck.js';
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
+router.get('/', async function (req, res) {
   const defaultForm = {
     fullName: 'Full name',
     jobTitle: 'Job title',
@@ -31,4 +31,4 @@ router.post('/', formCheck(), (req, res) => {
   res.send({ html });
 });
 
-export default router;
+module.exports = router;
