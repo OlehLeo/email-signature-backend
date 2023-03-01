@@ -1,6 +1,7 @@
 import express from 'express';
 
 import { templates } from '../templates/index.js';
+import { formCheck } from '../middlewares/formCheck.js';
 
 const router = express.Router();
 
@@ -23,6 +24,8 @@ router.get('/', async function (req, res) {
 });
 
 router.post('/', async function (req, res) {
+  formCheck(req, res);
+
   const { form, templateTitle } = req.body;
 
   const template = templates.find((template) => template.title === templateTitle);
