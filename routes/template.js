@@ -37,4 +37,8 @@ router.post('/test', async function (req, res) {
   res.send({ result });
 });
 
+router.get('/test', async function (req, res) {
+  res.send('get test');
+});
+
 export default router;
