@@ -27,6 +27,7 @@ router.post('/', async function (req, res) {
 
   const template = templates.find((template) => template.title === templateTitle);
   const html = template.generate(form);
+
   res.send({ html });
 });
 
