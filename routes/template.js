@@ -31,4 +31,4 @@ router.post('/', formCheck(), (req, res) => {
   res.send({ html });
 });
 
-module.exports = router;
+export default router;

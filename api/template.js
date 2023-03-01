@@ -1,6 +1,6 @@
-const app = require('../index.js');
-const router = require('../routes/router.js');
+import app from '../index.js';
+import router from '../routes/router.js';
 
 app.use('/api/', router);
 
-module.exports = app;
+export default app;
