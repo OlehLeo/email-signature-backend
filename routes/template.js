@@ -23,8 +23,7 @@ router.get('/', async function (req, res) {
   res.send(allTemplates);
 });
 
-router.post('/', formCheck(), async function (req, res) {
-  console.log(req);
+router.post('/', async function (req, res) {
   const { form, templateTitle } = req.body;
 
   const template = templates.find((template) => template.title === templateTitle);
